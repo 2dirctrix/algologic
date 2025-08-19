@@ -1,0 +1,199 @@
+// ===================================
+// CYBERPUNK COMPONENTS
+// ===================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// 버튼 컴포넌트
+.btn-primary {
+  @include button-base($cyberpunk-pink, $cyberpunk-pink, $text-primary);
+}
+
+.btn-secondary {
+  @include button-base($electric-blue, $electric-blue, $electric-blue);
+}
+
+.btn-success {
+  @include button-base($neon-green, $neon-green, $neon-green);
+}
+
+.btn-warning {
+  @include button-base($cyberpunk-yellow, $cyberpunk-yellow, $cyberpunk-yellow);
+}
+
+// 카드 컴포넌트
+.card-basic {
+  @include card-base($card-bg, $electric-blue);
+}
+
+.card-featured {
+  @include card-base($card-bg, $cyberpunk-pink);
+}
+
+.card-nested {
+  @include nested-card-base($card-bg, $electric-blue);
+}
+
+// 카드 제목 및 설명
+.card-title {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: 16px;
+  color: $text-primary;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: 14px;
+  color: $text-primary;
+  opacity: $opacity-text-secondary;
+}
+
+// 입력 폼 컴포넌트
+.input-field {
+  background: $input-bg;
+  border: 1px solid $cyan;
+  border-radius: $radius-input;
+  padding: 12px 16px;
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: 14px;
+  color: $text-primary;
+  width: 100%;
+
+  &::placeholder {
+    color: $text-primary;
+    opacity: $opacity-placeholder;
+  }
+
+  &:focus {
+    outline: none;
+    @include neon-glow($cyan);
+  }
+}
+
+// 게임 관련 특수 버튼
+.btn-create {
+  background: $electric-blue;
+  color: $primary-bg;
+  border: none;
+  border-radius: $radius-nested;
+  padding: 12px 24px;
+  font-family: $font-accent;
+  font-size: 16px;
+  cursor: pointer;
+
+  @include neon-glow($electric-blue);
+}
+
+.btn-language-selection {
+  background: rgba($text-primary, $opacity-inactive);
+  border: 1px solid rgba($neon-green, $opacity-text-secondary);
+  color: $text-primary;
+  border-radius: $radius-nested;
+  padding: 8px 16px;
+  font-family: $font-accent;
+  font-size: 14px;
+  cursor: pointer;
+
+  @include neon-glow($neon-green);
+}
+
+.btn-game-type {
+  background: rgba($text-primary, $opacity-inactive);
+  border: 1px solid rgba($neon-magenta, $opacity-text-secondary);
+  color: $text-primary;
+  border-radius: $radius-nested;
+  padding: 8px 16px;
+  font-family: $font-accent;
+  font-size: 14px;
+  cursor: pointer;
+
+  @include neon-glow($neon-magenta);
+}
+
+// 코인 정보 컴포넌트
+.coin-info {
+  background: rgba($text-primary, $opacity-minimal);
+  border: 1px solid rgba($electric-blue, $opacity-text-secondary);
+  border-radius: $radius-nested;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include neon-glow($electric-blue);
+}
+
+.coin-icon {
+  background: $electric-blue;
+  color: $primary-bg;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: 12px;
+}
+
+.coin-amount {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: 16px;
+  color: $text-primary;
+}
+
+// 언어 태그 컴포넌트
+.language-tag {
+  background: #D9D9D9;
+  color: $cyberpunk-yellow;
+  padding: 4px 8px;
+  border-radius: $radius-button;
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: 12px;
+  display: inline-block;
+}
+
+// 플레이어 슬롯 컴포넌트
+.player-slot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &.empty {
+    background: rgba($text-primary, 0.05);
+    border-style: dashed;
+    opacity: $opacity-placeholder;
+  }
+}
+
+.player-name {
+  font-family: $font-accent;
+  font-size: 18px;
+  color: $electric-blue;
+}
+
+.player-tier {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: 14px;
+  color: $text-primary;
+  opacity: $opacity-text-secondary;
+}
+
+.player-rating {
+  background: $cyberpunk-yellow;
+  color: $text-gold;
+  padding: 2px 6px;
+  border-radius: $radius-button;
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: 10px;
+}

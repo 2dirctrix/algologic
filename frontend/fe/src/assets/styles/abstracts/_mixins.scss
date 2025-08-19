@@ -1,0 +1,107 @@
+// ===================================
+// CYBERPUNK DESIGN SYSTEM MIXINS
+// ===================================
+
+@use '../abstracts/variables' as *;
+
+// 네온 글로우 효과 (일반)
+@mixin neon-glow($color) {
+  &:hover {
+    box-shadow: 0 0 calc(0.1vh) #{$color}, 0 0 calc(0.5vh) #{$color}, 0 0 calc(1vh) #{$color};
+  }
+}
+
+// 네온 글로우 효과 (강조)
+@mixin neon-glow-strong($color) {
+  box-shadow: 0 0 calc(1vh) rgba($color, 0.3), 0 0 calc(2vh) rgba($color, 0.2);
+
+  &:hover {
+    box-shadow: 0 0 calc(1.5vh) rgba($color, 0.4), 0 0 calc(3vh) rgba($color, 0.3);
+  }
+}
+
+// 블러 백드롭 효과
+@mixin backdrop-blur($bg-color: $card-bg, $opacity: $opacity-backdrop) {
+  background: rgba($bg-color, $opacity);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+// 버튼 베이스 스타일
+@mixin button-base($bg-color, $border-color, $text-color) {
+  background: rgba($bg-color, $opacity-active);
+  border: 2px solid $border-color;
+  color: $text-color;
+  border-radius: $radius-button;
+  padding: 8px 16px;
+  font-family: $font-primary;
+  font-weight: $font-weight-semibold;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  @include neon-glow($border-color);
+
+  &:hover {
+    background: rgba($bg-color, $opacity-active + 0.1);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+// 카드 베이스 스타일
+@mixin card-base($bg-color, $border-color) {
+  @include backdrop-blur($bg-color);
+  border: 1px solid $border-color;
+  border-radius: $radius-nested;
+  overflow: hidden;
+
+  @include neon-glow($border-color);
+}
+
+// 중첩 카드 스타일
+@mixin nested-card-base($bg-color, $border-color) {
+  @include backdrop-blur($bg-color);
+  border: 1px solid $border-color;
+  border-radius: $radius-medium;
+
+  @include neon-glow($border-color);
+}
+
+// 플레이어 슬롯 배경 그라디언트
+@mixin player-slot-gradient($primary-color) {
+  background: linear-gradient(135deg,
+    rgba($primary-color, 0.2) 0%,
+    rgba($primary-color, 0.1) 50%,
+    rgba($primary-color, 0.05) 100%
+  );
+}
+
+// 반응형 미디어쿼리
+@mixin tablet-up {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}

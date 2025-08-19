@@ -1,0 +1,89 @@
+// ===================================
+// CYBERPUNK DESIGN SYSTEM VARIABLES
+// ===================================
+
+// Primary Neon Colors (메인 컬러)
+$cyberpunk-pink: #FF3D94;
+$electric-blue: #00FFF0;
+$neon-green: #00FFAB;
+$synthwave-purple: #8F00FF;
+$cyberpunk-yellow: #FFCC00;
+
+// Secondary Neon Colors (보조 컬러)
+$hot-pink: #FF0066;
+$cyan: #00CCFF;
+$electric-violet: #CC00FF;
+$neon-magenta: #FF00CC;
+
+// Background Colors
+$primary-bg: #000000;
+$card-bg: #1A0A2E;
+$input-bg: #0F0F1A;
+
+// Text Colors
+$text-primary: #FFFFFF;
+$text-gold: #C89B3C;
+$text-muted: #999999;
+
+// Border Radius System
+$radius-main: calc(3.5vh);
+$radius-nested: calc(2.5vh);
+$radius-medium: calc(2vh);
+$radius-small: calc(1.5vh);
+$radius-button: calc(1vh);
+$radius-input: calc(0.75vh);
+
+// Opacity Patterns
+$opacity-active: 0.2;
+$opacity-inactive: 0.15;
+$opacity-minimal: 0.1;
+$opacity-text-secondary: 0.7;
+$opacity-placeholder: 0.5;
+$opacity-overlay: 0.6;
+$opacity-backdrop: 0.4;
+
+// Font Families
+$font-primary: 'Pretendard', sans-serif;
+$font-accent: 'Gajraj One', cursive;
+
+// Font Weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Component Sizes
+$button-height-sm: 32px;
+$button-height-md: 40px;
+$button-height-lg: 48px;
+
+$card-padding-sm: 12px;
+$card-padding-md: 16px;
+$card-padding-lg: 20px;
+$card-padding-xl: 24px;
+
+$input-height: 44px;
+$input-padding: 12px 16px;
+
+// Spacing Scale
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 20px;
+$spacing-xxl: 24px;
+$spacing-xxxl: 32px;
+
+// Z-index Scale
+$z-dropdown: 1000;
+$z-modal: 1500;
+$z-overlay: 2000;
+
+// Transition
+$transition-base: 0.3s ease;
+$transition-fast: 0.15s ease;
+
+// Responsive Breakpoints (태블릿까지만)
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1280px;

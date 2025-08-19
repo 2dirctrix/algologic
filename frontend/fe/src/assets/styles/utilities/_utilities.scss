@@ -1,0 +1,206 @@
+// ===================================
+// CYBERPUNK UTILITIES
+// ===================================
+
+@use '../abstracts/variables' as *;
+
+// 텍스트 컬러 유틸리티
+.text-cyberpunk-pink {
+  color: $cyberpunk-pink;
+}
+.text-electric-blue {
+  color: $electric-blue;
+}
+.text-neon-green {
+  color: $neon-green;
+}
+.text-synthwave-purple {
+  color: $synthwave-purple;
+}
+.text-cyberpunk-yellow {
+  color: $cyberpunk-yellow;
+}
+.text-hot-pink {
+  color: $hot-pink;
+}
+.text-cyan {
+  color: $cyan;
+}
+.text-electric-violet {
+  color: $electric-violet;
+}
+.text-neon-magenta {
+  color: $neon-magenta;
+}
+
+// 배경 투명도 유틸리티
+.bg-active {
+  background: rgba($text-primary, $opacity-active);
+}
+.bg-inactive {
+  background: rgba($text-primary, $opacity-inactive);
+}
+.bg-minimal {
+  background: rgba($text-primary, $opacity-minimal);
+}
+.bg-overlay {
+  background: rgba($primary-bg, $opacity-overlay);
+}
+.bg-backdrop {
+  background: rgba($primary-bg, $opacity-backdrop);
+}
+
+// 네온 컬러 배경 투명도
+.bg-cyberpunk-pink-active {
+  background: rgba($cyberpunk-pink, $opacity-active);
+}
+.bg-electric-blue-active {
+  background: rgba($electric-blue, $opacity-active);
+}
+.bg-neon-green-active {
+  background: rgba($neon-green, $opacity-active);
+}
+.bg-synthwave-purple-active {
+  background: rgba($synthwave-purple, $opacity-active);
+}
+.bg-cyberpunk-yellow-active {
+  background: rgba($cyberpunk-yellow, $opacity-active);
+}
+
+// Border Radius 유틸리티
+.rounded-main {
+  border-radius: $radius-main;
+}
+.rounded-nested {
+  border-radius: $radius-nested;
+}
+.rounded-medium {
+  border-radius: $radius-medium;
+}
+.rounded-small {
+  border-radius: $radius-small;
+}
+.rounded-button {
+  border-radius: $radius-button;
+}
+.rounded-input {
+  border-radius: $radius-input;
+}
+.rounded-full {
+  border-radius: 50%;
+}
+
+// 테두리 유틸리티
+.border-cyberpunk-pink {
+  border: 1px solid $cyberpunk-pink;
+}
+.border-electric-blue {
+  border: 1px solid $electric-blue;
+}
+.border-neon-green {
+  border: 1px solid $neon-green;
+}
+.border-synthwave-purple {
+  border: 1px solid $synthwave-purple;
+}
+.border-cyberpunk-yellow {
+  border: 1px solid $cyberpunk-yellow;
+}
+
+// 스페이싱 유틸리티
+.p-4 {
+  padding: 4px;
+}
+.p-8 {
+  padding: 8px;
+}
+.p-12 {
+  padding: 12px;
+}
+.p-16 {
+  padding: 16px;
+}
+.p-20 {
+  padding: 20px;
+}
+.p-24 {
+  padding: 24px;
+}
+
+.m-4 {
+  margin: 4px;
+}
+.m-8 {
+  margin: 8px;
+}
+.m-12 {
+  margin: 12px;
+}
+.m-16 {
+  margin: 16px;
+}
+.m-20 {
+  margin: 20px;
+}
+.m-24 {
+  margin: 24px;
+}
+
+// Flexbox 유틸리티
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-4 {
+  gap: 4px;
+}
+.gap-8 {
+  gap: 8px;
+}
+.gap-12 {
+  gap: 12px;
+}
+.gap-16 {
+  gap: 16px;
+}
+
+// 디스플레이 유틸리티
+.hidden {
+  display: none;
+}
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+
+// 포지션 유틸리티
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+
+// 크기 유틸리티
+.w-full {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}

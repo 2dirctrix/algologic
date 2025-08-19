@@ -1,0 +1,130 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_LOCAL_HOST}:${MYSQL_LOCAL_PORT}/${MYSQL_DATABASE}?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    username: ${MYSQL_LOCAL_USERNAME}
+    password: ${MYSQL_LOCAL_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:sql/data.sql
+
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            client-id: ${KAKAO_CLIENT_ID}
+            redirect-uri: http://localhost:3000/auth
+            client-secret: ${KAKAO_CLIENT_SECRET}
+        provider:
+          kakao:
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.springframework.messaging: DEBUG
+    org.springframework.web.socket: DEBUG
+    org.springframework.web.socket.messaging: DEBUG
+    org.springframework.web.socket.sockjs: DEBUG
+
+#AWS
+aws:
+  s3-bucket-name: ${AWS_S3_BUCKET_NAME}
+  region: ${AWS_REGION}
+  access-key: ${AWS_ACCESS_KEY}
+  secret-key: ${AWS_SECRET_KEY}
+  sqs-queue-name: ${AWS_SQS_QUEUE_NAME}
+
+#p6spy
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
+
+#JWT
+jwt:
+  secret: ${JWT_SECRET_KEY}
+  accessToken:
+    expiration:
+      millis: ${JWT_ACCESS_TOKEN_EXPIRATION_MILLIS}
+  refreshToken:
+    expiration:
+      days: ${JWT_REFRESH_TOKEN_EXPIRATION_DAYS}
+
+cors:
+  allowed-origins:
+    - http://localhost:3000
+    - http://localhost:5500  # 임시 허용
+    - http://localhost:8080  # 임시 허용
+    - http://127.0.0.1:5500  # 임시 허용
+    - null                   # 임시 허용
+  allow-credentials: true
+  allowed-headers: "*"
+  allowed-methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+  exposed-headers:
+    - Authorization
+    - refresh-token
+  path-pattern: "/**"
+
+# Room
+room:
+  cleanup:
+    interval-ms: 20000           # 스케줄러 실행 주기: 20초마다
+    disconnect-timeout-sec: 20   # 연결 끊긴지 20초 이상이면 제거
+
+# In Game
+ingame:
+  phase-durations: # ms 단위
+    LOADING: 3000
+    BAN_CHOICE: 10000  # TODO. 테스트용 임시 값 수거
+    PICK_CHOICE: 10000
+    PURCHASE: 10000
+    BATTLE: 100000  # 1분 40초
+  padding-duration: 3000
+  sync-interval-ms: 10000
+  timeout-check-interval-ms: 1000
+
+  # 배틀 결과 보상 정책 (타입별)
+  scoring:
+    NORMAL:
+      unsolved:
+        score: 0
+        coin: 500
+      solved:
+        base-score: 0
+        base-coin: 1000
+    RANKED:
+      unsolved:
+        score: -100
+        coin: 500
+      solved:
+        base-score: 100
+        base-coin: 1000
+
+livekit:
+  api:
+    key: ${LIVEKIT_API_KEY:devkey}
+    secret: ${LIVEKIT_API_SECRET:secret}

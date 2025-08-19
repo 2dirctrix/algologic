@@ -1,0 +1,24 @@
+23
+a b c b a a a b c b
+a b c b a a a bcb
+a b c b a aa b c b
+a b c b a aa bcb
+a b c b aa a b c b
+a b c b aa a bcb
+a b c b aaa b c b
+a b c b aaa bcb
+a b c baaab c b
+a b cbaaabc b
+a bcb a a a b c b
+a bcb a a a bcb
+a bcb a aa b c b
+a bcb a aa bcb
+a bcb aa a b c b
+a bcb aa a bcb
+a bcb aaa b c b
+a bcb aaa bcb
+a bcbaaabcb
+abcba a a b c b
+abcba a a bcb
+abcba aa b c b
+abcba aa bcb

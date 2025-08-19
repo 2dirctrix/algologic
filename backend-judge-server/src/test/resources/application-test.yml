@@ -1,0 +1,27 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_LOCAL_HOST}:${MYSQL_LOCAL_PORT}/${MYSQL_DATABASE}?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    username: ${MYSQL_LOCAL_USERNAME}
+    password: ${MYSQL_LOCAL_PASSWORD}
+
+#AWS
+aws:
+  region: ${AWS_REGION}
+  access-key: ${AWS_ACCESS_KEY}
+  secret-key: ${AWS_SECRET_KEY}
+  sqs-queue-name: ${AWS_SQS_QUEUE_NAME}
+
+logging:
+  level:
+    com.ssafy.c204_be_judge.judge: debug
+
+judge:
+  api-server:
+    base-url: ${LOCAL_API_SERVER_URL}
+    result-path: ${JUDGE_RESULT_API_PATH}

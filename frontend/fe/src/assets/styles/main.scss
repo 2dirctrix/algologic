@@ -1,0 +1,48 @@
+// ===================================
+// CYBERPUNK DESIGN SYSTEM MAIN
+// ===================================
+
+// 1. Abstracts (변수, 믹스인)
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+// 2. Base (기본 스타일, 타이포그래피)
+@use 'base/typography';
+
+// 3. Components (컴포넌트 스타일)
+@use 'components/components';
+
+// 4. Utilities (유틸리티 클래스)
+@use 'utilities/utilities';
+
+// 전역 기본 스타일
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $primary-bg;
+  color: $text-primary;
+  line-height: 1.5;
+}
+
+// 스크롤바 스타일링 (사이버펑크 테마)
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $primary-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $electric-blue;
+  border-radius: 4px;
+
+  &:hover {
+    background: $cyberpunk-pink;
+  }
+}

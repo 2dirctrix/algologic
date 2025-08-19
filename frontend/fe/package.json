@@ -1,0 +1,42 @@
+{
+  "name": "fe",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode dev",
+    "prod": "vite --mode production",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@guolao/vue-monaco-editor": "^1.5.5",
+    "@stomp/stompjs": "^7.1.1",
+    "axios": "^1.11.0",
+    "livekit-client": "^2.15.4",
+    "monaco-themes": "^0.4.6",
+    "pinia": "^3.0.3",
+    "pinia-plugin-persistedstate": "^4.4.1",
+    "simple-keyboard": "^3.8.77",
+    "sockjs-client": "^1.6.1",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1",
+    "vue3-calendar-heatmap": "^2.0.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/express": "^5.0.3",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "~10.2.0",
+    "globals": "^16.3.0",
+    "prettier": "3.5.3",
+    "sass": "^1.89.2",
+    "vite": "^7.0.0",
+    "vite-plugin-vue-devtools": "^7.7.7"
+  }
+}

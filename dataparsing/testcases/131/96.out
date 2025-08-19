@@ -1,0 +1,65 @@
+64
+a a b b c c d d e e f f
+a a b b c c d d e e ff
+a a b b c c d d ee f f
+a a b b c c d d ee ff
+a a b b c c dd e e f f
+a a b b c c dd e e ff
+a a b b c c dd ee f f
+a a b b c c dd ee ff
+a a b b cc d d e e f f
+a a b b cc d d e e ff
+a a b b cc d d ee f f
+a a b b cc d d ee ff
+a a b b cc dd e e f f
+a a b b cc dd e e ff
+a a b b cc dd ee f f
+a a b b cc dd ee ff
+a a bb c c d d e e f f
+a a bb c c d d e e ff
+a a bb c c d d ee f f
+a a bb c c d d ee ff
+a a bb c c dd e e f f
+a a bb c c dd e e ff
+a a bb c c dd ee f f
+a a bb c c dd ee ff
+a a bb cc d d e e f f
+a a bb cc d d e e ff
+a a bb cc d d ee f f
+a a bb cc d d ee ff
+a a bb cc dd e e f f
+a a bb cc dd e e ff
+a a bb cc dd ee f f
+a a bb cc dd ee ff
+aa b b c c d d e e f f
+aa b b c c d d e e ff
+aa b b c c d d ee f f
+aa b b c c d d ee ff
+aa b b c c dd e e f f
+aa b b c c dd e e ff
+aa b b c c dd ee f f
+aa b b c c dd ee ff
+aa b b cc d d e e f f
+aa b b cc d d e e ff
+aa b b cc d d ee f f
+aa b b cc d d ee ff
+aa b b cc dd e e f f
+aa b b cc dd e e ff
+aa b b cc dd ee f f
+aa b b cc dd ee ff
+aa bb c c d d e e f f
+aa bb c c d d e e ff
+aa bb c c d d ee f f
+aa bb c c d d ee ff
+aa bb c c dd e e f f
+aa bb c c dd e e ff
+aa bb c c dd ee f f
+aa bb c c dd ee ff
+aa bb cc d d e e f f
+aa bb cc d d e e ff
+aa bb cc d d ee f f
+aa bb cc d d ee ff
+aa bb cc dd e e f f
+aa bb cc dd e e ff
+aa bb cc dd ee f f
+aa bb cc dd ee ff

@@ -1,0 +1,34 @@
+33
+a b c c b a a b c c b a
+a b c c b a a b cc b a
+a b c c b a a bccb a
+a b c c b a abccba
+a b c c b aa b c c b a
+a b c c b aa b cc b a
+a b c c b aa bccb a
+a b c c baab c c b a
+a b c c baab cc b a
+a b c cbaabc c b a
+a b cc b a a b c c b a
+a b cc b a a b cc b a
+a b cc b a a bccb a
+a b cc b a abccba
+a b cc b aa b c c b a
+a b cc b aa b cc b a
+a b cc b aa bccb a
+a b cc baab c c b a
+a b cc baab cc b a
+a b ccbaabcc b a
+a bccb a a b c c b a
+a bccb a a b cc b a
+a bccb a a bccb a
+a bccb a abccba
+a bccb aa b c c b a
+a bccb aa b cc b a
+a bccb aa bccb a
+a bccbaabccb a
+abccba a b c c b a
+abccba a b cc b a
+abccba a bccb a
+abccba abccba
+abccbaabccba

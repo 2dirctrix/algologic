@@ -1,0 +1,118 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_PROD_HOST}:${MYSQL_PROD_PORT}/${MYSQL_DATABASE}?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    username: ${MYSQL_PROD_USERNAME}
+    password: ${MYSQL_PROD_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    defer-datasource-initialization: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            client-id: ${KAKAO_CLIENT_ID}
+            redirect-uri: https://i13c204.p.ssafy.io/auth
+            client-secret: ${KAKAO_CLIENT_SECRET}
+        provider:
+          kakao:
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+
+#AWS
+aws:
+  s3-bucket-name: ${AWS_S3_BUCKET_NAME}
+  region: ${AWS_REGION}
+  access-key: ${AWS_ACCESS_KEY}
+  secret-key: ${AWS_SECRET_KEY}
+  sqs-queue-name: ${AWS_SQS_QUEUE_NAME}
+
+#p6spy
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: false
+
+#JWT
+jwt:
+  secret: ${JWT_SECRET_KEY}
+  accessToken:
+    expiration:
+      millis: ${JWT_ACCESS_TOKEN_EXPIRATION_MILLIS}
+  refreshToken:
+    expiration:
+      days: ${JWT_REFRESH_TOKEN_EXPIRATION_DAYS}
+
+cors:
+  allowed-origins:
+    - http://localhost:3000
+    - https://i13c204.p.ssafy.io
+  allow-credentials: true
+  allowed-headers: "*"
+  allowed-methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+  exposed-headers:
+    - Authorization
+    - refresh-token
+  path-pattern: "/**"
+
+# Room
+room:
+  cleanup:
+    interval-ms: 20000           # 스케줄러 실행 주기: 20초마다
+    disconnect-timeout-sec: 20   # 연결 끊긴지 20초 이상이면 제거
+
+# In Game
+ingame:
+  phase-durations:         # ms 단위
+    LOADING: 3000
+    BAN_CHOICE: 20000
+    PICK_CHOICE: 20000
+    PURCHASE: 30000
+    BATTLE: 3600000        # 기본 값 1시간
+  padding-duration: 3000   # ms 단위
+  sync-interval-ms: 5000
+  timeout-check-interval-ms: 1000
+
+  # 배틀 결과 보상 정책 (타입별)
+  scoring:
+    NORMAL:
+      unsolved:
+        score: 0
+        coin: 500
+      solved:
+        base-score: 0
+        base-coin: 1000
+    RANKED:
+      unsolved:
+        score: -100
+        coin: 500
+      solved:
+        base-score: 100
+        base-coin: 1000
+
+livekit:
+  api:
+    key: ${LIVEKIT_API_KEY:devkey}
+    secret: ${LIVEKIT_API_SECRET:secret}
